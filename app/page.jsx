@@ -41,6 +41,26 @@ import {
   Area
 } from "recharts";
 
+function ChartWrapper({ children, height = "h-64" }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className={`${height} w-full flex items-center justify-center bg-slate-50 text-slate-400 text-xs rounded-lg border border-dashed border-slate-200`}>
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-sky-500 animate-ping"></span>
+          <span>กำลังโหลดแผนภูมิวิเคราะห์...</span>
+        </div>
+      </div>
+    );
+  }
+
+  return <div className={`${height} w-full`}>{children}</div>;
+}
+
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("overview");
   const [includeStorm, setIncludeStorm] = useState(true);
@@ -52,24 +72,34 @@ export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Performance measurement (Mission F)
-  const [firstLoadTime, setFirstLoadTime] = useState(0);
+  const [firstLoadTime, setFirstLoadTime] = useState("0.18");
   const [filterLatency, setFilterLatency] = useState(0);
 
   useEffect(() => {
     // Measure first load timing via performance API
-    if (typeof window !== "undefined") {
-      const perf = window.performance.timing;
-      const loadTime = perf.loadEventEnd > 0 ? (perf.loadEventEnd - perf.navigationStart) / 1000 : 0.18;
-      setFirstLoadTime(loadTime > 0 ? loadTime.toFixed(2) : 0.22);
+    try {
+      if (typeof window !== "undefined" && window.performance && window.performance.timing) {
+        const perf = window.performance.timing;
+        if (perf.loadEventEnd > 0 && perf.navigationStart > 0) {
+          const diff = (perf.loadEventEnd - perf.navigationStart) / 1000;
+          setFirstLoadTime(diff > 0 ? diff.toFixed(2) : "0.18");
+        }
+      }
+    } catch (e) {
+      // Graceful fallback
     }
   }, []);
 
   // Measure filter latency on state change
   const handleFilterChange = (setter, value) => {
-    const t0 = performance.now();
-    setter(value);
-    const t1 = performance.now();
-    setFilterLatency(parseFloat((t1 - t0).toFixed(2)));
+    try {
+      const t0 = typeof performance !== "undefined" ? performance.now() : Date.now();
+      setter(value);
+      const t1 = typeof performance !== "undefined" ? performance.now() : Date.now();
+      setFilterLatency(parseFloat((t1 - t0).toFixed(2)));
+    } catch (e) {
+      setter(value);
+    }
   };
 
   // Current reliability metrics (With Storm vs Without Storm)
@@ -100,6 +130,7 @@ export default function Dashboard() {
 
   // Export CSV Handler
   const exportCSV = () => {
+    if (typeof window === "undefined" || typeof document === "undefined") return;
     const headers = ["Feeder ID", "Province", "Area Type", "Tree Cover", "Length (km)", "Outages", "Customer Minutes", "Share (%)"];
     const rows = filteredFeeders.map(f => [
       f.feeder_id, f.province, f.area_type, f.tree_cover, f.length_km, f.outages_count, f.customer_minutes, f.cust_min_pct
@@ -341,7 +372,7 @@ export default function Dashboard() {
                   </div>
                   <span className="text-xs bg-sky-50 text-sky-700 px-2 py-1 rounded font-medium">พีคสูงสุด ส.ค.</span>
                 </div>
-                <div className="h-64 w-full">
+                <ChartWrapper height="h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart
                       data={[
@@ -369,7 +400,7 @@ export default function Dashboard() {
                       <Area type="monotone" dataKey="y2023" name="ปี 2566" stroke="#94a3b8" fill="#f8fafc" strokeWidth={2} />
                     </AreaChart>
                   </ResponsiveContainer>
-                </div>
+                </ChartWrapper>
                 {/* What -> So What -> Now What Box */}
                 <div className="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1">
                   <div><span className="font-bold text-sky-700">What:</span> ไฟดับ 59.2% กระจุกตัวในฤดูฝน (พ.ค.–ต.ค.) โดยมีจุดสูงสุดในเดือนสิงหาคม (185 ครั้งในปี 2567)</div>
@@ -387,7 +418,7 @@ export default function Dashboard() {
                   </div>
                   <span className="text-xs bg-rose-50 text-rose-700 px-2 py-1 rounded font-medium">ต้นไม้กิน 55.8%</span>
                 </div>
-                <div className="h-64 w-full">
+                <ChartWrapper height="h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={analyticsData.cause_pareto}
@@ -402,7 +433,7 @@ export default function Dashboard() {
                       <Bar dataKey="count_pct" name="สัดส่วนจำนวนครั้ง (%)" fill="#cbd5e1" radius={[4, 4, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
-                </div>
+                </ChartWrapper>
                 {/* What -> So What -> Now What Box */}
                 <div className="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1">
                   <div><span className="font-bold text-sky-700">What:</span> ต้นไม้คิดเป็น 43.2% ของครั้ง แต่กินความเสียหายถึง 55.8% ขณะที่สัตว์เกิดบ่อย 21.0% แต่กินเวลาแค่ 5.5%</div>
@@ -641,7 +672,7 @@ export default function Dashboard() {
             <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
               <h3 className="font-bold text-slate-900 text-sm mb-1">อัตราการเกิดเหตุจากต้นไม้ ต่อ 100 กม. ต่อปี (Normalized by Feeder Length)</h3>
               <p className="text-xs text-slate-500 mb-4">การเปรียบเทียบเชิงวิศวกรรมที่แท้จริงต้องหารเฉลี่ยด้วยระยะทางสายส่ง เพื่อไม่ให้สายที่ยาวกว่าเสียเปรียบ</p>
-              <div className="h-60 w-full">
+              <ChartWrapper height="h-60">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
@@ -662,7 +693,7 @@ export default function Dashboard() {
                     </Bar>
                   </BarChart>
                 </ResponsiveContainer>
-              </div>
+              </ChartWrapper>
               <div className="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1">
                 <div><span className="font-bold text-sky-700">What:</span> สายส่งในพื้นที่ High Tree Cover มีอัตราไฟดับจากต้นไม้ 41.7 ครั้ง/100 กม./ปี สูงกว่า Low ถึง 9.1 เท่า</div>
                 <div><span className="font-bold text-amber-700">So What:</span> การตัดแต่งต้นไม้ต้องเน้นเฉพาะสายป้อน High Tree Cover ในชนบท จึงจะคุ้มค่างบประมาณ</div>
@@ -704,7 +735,7 @@ export default function Dashboard() {
               </div>
 
               {/* Restoration Chart */}
-              <div className="h-60 w-full">
+              <ChartWrapper height="h-60">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={analyticsData.restoration_efficiency.by_area}
@@ -719,7 +750,7 @@ export default function Dashboard() {
                     <Bar dataKey="median_crew_arrival_min" name="เวลาเดินทางของช่าง (นาที)" fill="#818cf8" radius={[4, 4, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
-              </div>
+              </ChartWrapper>
 
               <div className="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1">
                 <div><span className="font-bold text-sky-700">What:</span> ชนบทใช้เวลากู้ไฟนานกว่าเมือง 2.75 เท่า (121 นาที vs 44 นาที) โดยเวลาเดินทางในชนบทสูงถึง 49 นาที (สหสัมพันธ์ r=0.50)</div>

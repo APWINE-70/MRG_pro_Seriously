@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  output: 'standalone',
+  reactStrictMode: false, // Disabling reactStrictMode in production avoids double hydration cycles
 };
 
 module.exports = nextConfig;
