@@ -130,4 +130,15 @@ For full task instructions and evaluation rubrics, refer to [COMPETITION_TASK_PO
 - Data Dictionary: `docs/data_dictionary.md`
 - Reproducible Notebooks: `notebooks/01_phase1_data_cleaning.ipynb` and `notebooks/02_phase2_exploratory_data_analysis.ipynb`
 
+### 6.4 Next.js 14 + Recharts Client Hydration & Context Resolution Invariants
+1. **Recharts SSR Hydration Safety (`ChartWrapper`)**:
+   - Recharts SVG elements (`ResponsiveContainer`, `clipPath`) calculate zero width/height on the server during SSG/SSR, which causes React Error #423 (Hydration Mismatch) and crashes client runtime.
+   - Always wrap Recharts components with a client-only mount guard (`mounted` state in `useEffect`), rendering a placeholder until the client DOM is fully mounted.
+2. **Dedicated Local `node_modules`**:
+   - Ensure the Next.js project has its own local `node_modules` directory installed (`npm install`). If it traverses up to parent folders with drive casing discrepancies (`C:\` vs `c:\`), Webpack bundles duplicate React copies, breaking React contexts (`Invariant: Missing ActionQueueContext`).
+3. **Head Tag and Font Management**:
+   - In Next.js App Router, do not manually embed raw `<head>` with `<link>` in `RootLayout`. Import web fonts via `@import` in `globals.css` or Next.js Font Optimization to prevent hydration mismatch.
+   - Add `suppressHydrationWarning` on `<html>` and `<body>` to prevent third-party extensions from crashing React hydration.
+
+
 
