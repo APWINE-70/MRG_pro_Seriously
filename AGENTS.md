@@ -77,3 +77,23 @@ When an AI agent starts working in this directory:
 2. **Environment Check**: Check active runtime (Python, Node.js, etc.) and virtual environment status.
 3. **Task Execution**: Follow modular development practices.
 4. **Knowledge Update**: Record any architectural decisions, new conventions, or troubleshooting learnings directly in this `AGENTS.md`.
+
+---
+
+## 5. Active Competition Task: Power Outage Data Analysis
+
+For full task instructions and evaluation rubrics, refer to [COMPETITION_TASK_POWER_OUTAGE.md](COMPETITION_TASK_POWER_OUTAGE.md).
+
+- **Entity**: Lanna Power Distribution Co., Ltd. (Chiang Mai, Lamphun, Lampang, Chiang Rai).
+- **Timeframe**: 2023-01-01 to 2024-12-31 (B.E. 2566–2567).
+- **Primary Goal**: Identify high-priority feeders, root causes, and optimal investment windows for 2568 budget allocation to minimize SAIDI/SAIFI.
+- **Datasets**:
+  1. `outages_raw.csv` (2,843 rows) - Outage incidents
+  2. `feeders.xlsx` (55 rows) - GIS feeder registry
+  3. `substations.json` (8 rows) - Nested document substations
+  4. `weather_daily.csv` (2,899 rows) - Daily weather per province
+- **Strict Invariants**:
+  - Calculate SAIFI & SAIDI strictly on unplanned outages.
+  - Never drop rows silently; log rationale and count.
+  - Reconcile metrics with both raw and cleaned totals.
+
