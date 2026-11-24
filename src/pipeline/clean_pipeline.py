@@ -105,7 +105,7 @@ def run_pipeline(raw_dir: str, clean_dir: str, sample_dir: str):
     w["rainfall_mm"] = w["rainfall_mm"].fillna(0.0).round(1)
     
     w["max_wind_kmh"] = pd.to_numeric(w["max_wind_kmh"], errors="coerce").round(1)
-    w["thunderstorm"] = w["thunderstorm"].astype(bool)
+    w["thunderstorm"] = w["thunderstorm"].astype(str).str.strip().str.upper().isin(["Y", "YES", "TRUE", "1"])
     print(f"Weather cleaned: {len(w)} rows")
 
     # ----------------------------------------------------

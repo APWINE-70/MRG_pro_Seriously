@@ -1,0 +1,1386 @@
+{
+  "metadata": {
+    "title": "Lanna Power Distribution Reliability Analytics",
+    "scope": "2023-01-01 to 2024-12-31",
+    "total_customers": 212196,
+    "clean_events_total": 2743,
+    "unplanned_events_total": 2594,
+    "planned_events_total": 149,
+    "feeders_count": 54,
+    "substations_count": 8
+  },
+  "yoy_reliability": {
+    "2023": {
+      "year": 2023,
+      "buddhist_year": 2566,
+      "unplanned_outages": 1180,
+      "customers_affected": 1364605,
+      "customer_minutes": 176907441,
+      "saifi": 6.43,
+      "saidi": 833.7,
+      "caidi": 129.6
+    },
+    "2024": {
+      "year": 2024,
+      "buddhist_year": 2567,
+      "unplanned_outages": 1414,
+      "customers_affected": 1658652,
+      "customer_minutes": 249740435,
+      "saifi": 7.82,
+      "saidi": 1176.9,
+      "caidi": 150.6
+    },
+    "2024_without_storm": {
+      "year": 2024,
+      "buddhist_year": 2567,
+      "unplanned_outages": 1335,
+      "customers_affected": 1581287,
+      "customer_minutes": 194042844,
+      "saifi": 7.45,
+      "saidi": 914.5,
+      "caidi": 122.7,
+      "storm_events_count": 79,
+      "storm_customer_minutes": 55697591,
+      "storm_percentage_of_2024": 22.3
+    }
+  },
+  "cause_pareto": [
+    {
+      "cause": "tree",
+      "outages_count": 1121,
+      "customers_affected": 1034205,
+      "customer_minutes": 239296274,
+      "count_pct": 43.2,
+      "cust_min_pct": 56.1
+    },
+    {
+      "cause": "equipment",
+      "outages_count": 283,
+      "customers_affected": 463294,
+      "customer_minutes": 69986289,
+      "count_pct": 10.9,
+      "cust_min_pct": 16.4
+    },
+    {
+      "cause": "lightning",
+      "outages_count": 221,
+      "customers_affected": 379640,
+      "customer_minutes": 34962206,
+      "count_pct": 8.5,
+      "cust_min_pct": 8.2
+    },
+    {
+      "cause": "vehicle",
+      "outages_count": 99,
+      "customers_affected": 148549,
+      "customer_minutes": 26550652,
+      "count_pct": 3.8,
+      "cust_min_pct": 6.2
+    },
+    {
+      "cause": "animal",
+      "outages_count": 538,
+      "customers_affected": 383724,
+      "customer_minutes": 24223368,
+      "count_pct": 20.7,
+      "cust_min_pct": 5.7
+    },
+    {
+      "cause": "unknown",
+      "outages_count": 234,
+      "customers_affected": 411205,
+      "customer_minutes": 22015913,
+      "count_pct": 9.0,
+      "cust_min_pct": 5.2
+    },
+    {
+      "cause": "overload",
+      "outages_count": 98,
+      "customers_affected": 202640,
+      "customer_minutes": 9613174,
+      "count_pct": 3.8,
+      "cust_min_pct": 2.3
+    }
+  ],
+  "top_5_feeders": [
+    {
+      "feeder_id": "CRI-F11",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 82.4,
+      "outages_count": 155,
+      "customers_affected": 166152,
+      "customer_minutes": 40663710,
+      "cust_min_pct": 9.53
+    },
+    {
+      "feeder_id": "CRI-F03",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 70.1,
+      "outages_count": 103,
+      "customers_affected": 109311,
+      "customer_minutes": 26583116,
+      "cust_min_pct": 6.23
+    },
+    {
+      "feeder_id": "LPG-F09",
+      "area_type": "Rural",
+      "province": "ลำปาง",
+      "tree_cover": "high",
+      "length_km": 76.9,
+      "outages_count": 135,
+      "customers_affected": 131474,
+      "customer_minutes": 23891135,
+      "cust_min_pct": 5.6
+    },
+    {
+      "feeder_id": "CRI-F13",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 84.8,
+      "outages_count": 118,
+      "customers_affected": 108572,
+      "customer_minutes": 23828498,
+      "cust_min_pct": 5.59
+    },
+    {
+      "feeder_id": "CRI-F04",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 73.1,
+      "outages_count": 114,
+      "customers_affected": 110038,
+      "customer_minutes": 23737052,
+      "cust_min_pct": 5.56
+    }
+  ],
+  "top_10_feeders": [
+    {
+      "feeder_id": "CRI-F11",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 82.4,
+      "outages_count": 155,
+      "customers_affected": 166152,
+      "customer_minutes": 40663710,
+      "cust_min_pct": 9.53
+    },
+    {
+      "feeder_id": "CRI-F03",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 70.1,
+      "outages_count": 103,
+      "customers_affected": 109311,
+      "customer_minutes": 26583116,
+      "cust_min_pct": 6.23
+    },
+    {
+      "feeder_id": "LPG-F09",
+      "area_type": "Rural",
+      "province": "ลำปาง",
+      "tree_cover": "high",
+      "length_km": 76.9,
+      "outages_count": 135,
+      "customers_affected": 131474,
+      "customer_minutes": 23891135,
+      "cust_min_pct": 5.6
+    },
+    {
+      "feeder_id": "CRI-F13",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 84.8,
+      "outages_count": 118,
+      "customers_affected": 108572,
+      "customer_minutes": 23828498,
+      "cust_min_pct": 5.59
+    },
+    {
+      "feeder_id": "CRI-F04",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 73.1,
+      "outages_count": 114,
+      "customers_affected": 110038,
+      "customer_minutes": 23737052,
+      "cust_min_pct": 5.56
+    },
+    {
+      "feeder_id": "CRI-F10",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 72.6,
+      "outages_count": 93,
+      "customers_affected": 88411,
+      "customer_minutes": 20148631,
+      "cust_min_pct": 4.72
+    },
+    {
+      "feeder_id": "CMI-F10",
+      "area_type": "rural",
+      "province": "เชียงใหม่",
+      "tree_cover": "high",
+      "length_km": 68.2,
+      "outages_count": 98,
+      "customers_affected": 103452,
+      "customer_minutes": 18973324,
+      "cust_min_pct": 4.45
+    },
+    {
+      "feeder_id": "CRI-F12",
+      "area_type": "rural",
+      "province": "เชียงราย",
+      "tree_cover": "high",
+      "length_km": 53.3,
+      "outages_count": 77,
+      "customers_affected": 101439,
+      "customer_minutes": 17520085,
+      "cust_min_pct": 4.11
+    },
+    {
+      "feeder_id": "CMI-F20",
+      "area_type": "rural",
+      "province": "เชียงใหม่",
+      "tree_cover": "medium",
+      "length_km": 63.8,
+      "outages_count": 70,
+      "customers_affected": 85914,
+      "customer_minutes": 11192640,
+      "cust_min_pct": 2.62
+    },
+    {
+      "feeder_id": "LPG-F12",
+      "area_type": "rural",
+      "province": "ลำปาง",
+      "tree_cover": "medium",
+      "length_km": 84.3,
+      "outages_count": 80,
+      "customers_affected": 72510,
+      "customer_minutes": 11126561,
+      "cust_min_pct": 2.61
+    }
+  ],
+  "aging_feeder_warning": {
+    "feeder_id": "CMI-F14",
+    "install_year": 1997,
+    "equipment_failures_2023": 5,
+    "equipment_failures_2024": 19,
+    "growth_pct": 280.0
+  },
+  "temporal_insights": {
+    "lightning_afternoon_pct": 67.0,
+    "animal_morning_pct": 46.1,
+    "rainy_season_months": "พ.ค. - ต.ค.",
+    "tree_in_rainy_season_pct": 68.0
+  },
+  "monthly_trend": [
+    {
+      "year": 2023,
+      "month": 1,
+      "outages_count": 70,
+      "customer_minutes": 9712504
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "outages_count": 63,
+      "customer_minutes": 9927598
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "outages_count": 88,
+      "customer_minutes": 10744666
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "outages_count": 108,
+      "customer_minutes": 15329280
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "outages_count": 139,
+      "customer_minutes": 18076348
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "outages_count": 100,
+      "customer_minutes": 15230198
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "outages_count": 99,
+      "customer_minutes": 17188269
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "outages_count": 128,
+      "customer_minutes": 19403196
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "outages_count": 118,
+      "customer_minutes": 18403965
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "outages_count": 105,
+      "customer_minutes": 20121151
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "outages_count": 78,
+      "customer_minutes": 11485365
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "outages_count": 84,
+      "customer_minutes": 11284901
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "outages_count": 83,
+      "customer_minutes": 14121467
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "outages_count": 77,
+      "customer_minutes": 8508534
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "outages_count": 114,
+      "customer_minutes": 15130060
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "outages_count": 153,
+      "customer_minutes": 19546622
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "outages_count": 143,
+      "customer_minutes": 20446415
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "outages_count": 129,
+      "customer_minutes": 18691189
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "outages_count": 136,
+      "customer_minutes": 21057018
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "outages_count": 207,
+      "customer_minutes": 75740349
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "outages_count": 122,
+      "customer_minutes": 20196700
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "outages_count": 99,
+      "customer_minutes": 13678537
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "outages_count": 82,
+      "customer_minutes": 11441153
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "outages_count": 69,
+      "customer_minutes": 11182391
+    }
+  ],
+  "hourly_by_cause": [
+    {
+      "hour": 0,
+      "cause": "animal",
+      "outages_count": 7
+    },
+    {
+      "hour": 0,
+      "cause": "equipment",
+      "outages_count": 13
+    },
+    {
+      "hour": 0,
+      "cause": "lightning",
+      "outages_count": 4
+    },
+    {
+      "hour": 0,
+      "cause": "tree",
+      "outages_count": 29
+    },
+    {
+      "hour": 0,
+      "cause": "unknown",
+      "outages_count": 11
+    },
+    {
+      "hour": 0,
+      "cause": "vehicle",
+      "outages_count": 8
+    },
+    {
+      "hour": 1,
+      "cause": "animal",
+      "outages_count": 8
+    },
+    {
+      "hour": 1,
+      "cause": "equipment",
+      "outages_count": 13
+    },
+    {
+      "hour": 1,
+      "cause": "lightning",
+      "outages_count": 4
+    },
+    {
+      "hour": 1,
+      "cause": "tree",
+      "outages_count": 31
+    },
+    {
+      "hour": 1,
+      "cause": "unknown",
+      "outages_count": 7
+    },
+    {
+      "hour": 1,
+      "cause": "vehicle",
+      "outages_count": 8
+    },
+    {
+      "hour": 2,
+      "cause": "animal",
+      "outages_count": 8
+    },
+    {
+      "hour": 2,
+      "cause": "equipment",
+      "outages_count": 16
+    },
+    {
+      "hour": 2,
+      "cause": "lightning",
+      "outages_count": 4
+    },
+    {
+      "hour": 2,
+      "cause": "overload",
+      "outages_count": 4
+    },
+    {
+      "hour": 2,
+      "cause": "tree",
+      "outages_count": 30
+    },
+    {
+      "hour": 2,
+      "cause": "unknown",
+      "outages_count": 6
+    },
+    {
+      "hour": 2,
+      "cause": "vehicle",
+      "outages_count": 4
+    },
+    {
+      "hour": 3,
+      "cause": "animal",
+      "outages_count": 12
+    },
+    {
+      "hour": 3,
+      "cause": "equipment",
+      "outages_count": 14
+    },
+    {
+      "hour": 3,
+      "cause": "lightning",
+      "outages_count": 3
+    },
+    {
+      "hour": 3,
+      "cause": "tree",
+      "outages_count": 31
+    },
+    {
+      "hour": 3,
+      "cause": "unknown",
+      "outages_count": 7
+    },
+    {
+      "hour": 3,
+      "cause": "vehicle",
+      "outages_count": 2
+    },
+    {
+      "hour": 4,
+      "cause": "animal",
+      "outages_count": 29
+    },
+    {
+      "hour": 4,
+      "cause": "equipment",
+      "outages_count": 9
+    },
+    {
+      "hour": 4,
+      "cause": "lightning",
+      "outages_count": 1
+    },
+    {
+      "hour": 4,
+      "cause": "overload",
+      "outages_count": 3
+    },
+    {
+      "hour": 4,
+      "cause": "tree",
+      "outages_count": 26
+    },
+    {
+      "hour": 4,
+      "cause": "unknown",
+      "outages_count": 14
+    },
+    {
+      "hour": 4,
+      "cause": "vehicle",
+      "outages_count": 2
+    },
+    {
+      "hour": 5,
+      "cause": "animal",
+      "outages_count": 56
+    },
+    {
+      "hour": 5,
+      "cause": "equipment",
+      "outages_count": 8
+    },
+    {
+      "hour": 5,
+      "cause": "lightning",
+      "outages_count": 2
+    },
+    {
+      "hour": 5,
+      "cause": "overload",
+      "outages_count": 1
+    },
+    {
+      "hour": 5,
+      "cause": "tree",
+      "outages_count": 30
+    },
+    {
+      "hour": 5,
+      "cause": "unknown",
+      "outages_count": 12
+    },
+    {
+      "hour": 5,
+      "cause": "vehicle",
+      "outages_count": 4
+    },
+    {
+      "hour": 6,
+      "cause": "animal",
+      "outages_count": 63
+    },
+    {
+      "hour": 6,
+      "cause": "equipment",
+      "outages_count": 13
+    },
+    {
+      "hour": 6,
+      "cause": "lightning",
+      "outages_count": 1
+    },
+    {
+      "hour": 6,
+      "cause": "tree",
+      "outages_count": 31
+    },
+    {
+      "hour": 6,
+      "cause": "unknown",
+      "outages_count": 10
+    },
+    {
+      "hour": 6,
+      "cause": "vehicle",
+      "outages_count": 2
+    },
+    {
+      "hour": 7,
+      "cause": "animal",
+      "outages_count": 62
+    },
+    {
+      "hour": 7,
+      "cause": "equipment",
+      "outages_count": 10
+    },
+    {
+      "hour": 7,
+      "cause": "lightning",
+      "outages_count": 3
+    },
+    {
+      "hour": 7,
+      "cause": "overload",
+      "outages_count": 1
+    },
+    {
+      "hour": 7,
+      "cause": "tree",
+      "outages_count": 24
+    },
+    {
+      "hour": 7,
+      "cause": "unknown",
+      "outages_count": 5
+    },
+    {
+      "hour": 7,
+      "cause": "vehicle",
+      "outages_count": 3
+    },
+    {
+      "hour": 8,
+      "cause": "animal",
+      "outages_count": 38
+    },
+    {
+      "hour": 8,
+      "cause": "equipment",
+      "outages_count": 13
+    },
+    {
+      "hour": 8,
+      "cause": "lightning",
+      "outages_count": 2
+    },
+    {
+      "hour": 8,
+      "cause": "overload",
+      "outages_count": 1
+    },
+    {
+      "hour": 8,
+      "cause": "tree",
+      "outages_count": 30
+    },
+    {
+      "hour": 8,
+      "cause": "unknown",
+      "outages_count": 12
+    },
+    {
+      "hour": 8,
+      "cause": "vehicle",
+      "outages_count": 3
+    },
+    {
+      "hour": 9,
+      "cause": "animal",
+      "outages_count": 29
+    },
+    {
+      "hour": 9,
+      "cause": "equipment",
+      "outages_count": 13
+    },
+    {
+      "hour": 9,
+      "cause": "lightning",
+      "outages_count": 1
+    },
+    {
+      "hour": 9,
+      "cause": "tree",
+      "outages_count": 24
+    },
+    {
+      "hour": 9,
+      "cause": "unknown",
+      "outages_count": 16
+    },
+    {
+      "hour": 9,
+      "cause": "vehicle",
+      "outages_count": 1
+    },
+    {
+      "hour": 10,
+      "cause": "animal",
+      "outages_count": 11
+    },
+    {
+      "hour": 10,
+      "cause": "equipment",
+      "outages_count": 6
+    },
+    {
+      "hour": 10,
+      "cause": "lightning",
+      "outages_count": 2
+    },
+    {
+      "hour": 10,
+      "cause": "overload",
+      "outages_count": 1
+    },
+    {
+      "hour": 10,
+      "cause": "tree",
+      "outages_count": 28
+    },
+    {
+      "hour": 10,
+      "cause": "unknown",
+      "outages_count": 7
+    },
+    {
+      "hour": 10,
+      "cause": "vehicle",
+      "outages_count": 4
+    },
+    {
+      "hour": 11,
+      "cause": "animal",
+      "outages_count": 17
+    },
+    {
+      "hour": 11,
+      "cause": "equipment",
+      "outages_count": 6
+    },
+    {
+      "hour": 11,
+      "cause": "lightning",
+      "outages_count": 1
+    },
+    {
+      "hour": 11,
+      "cause": "overload",
+      "outages_count": 1
+    },
+    {
+      "hour": 11,
+      "cause": "tree",
+      "outages_count": 30
+    },
+    {
+      "hour": 11,
+      "cause": "unknown",
+      "outages_count": 9
+    },
+    {
+      "hour": 11,
+      "cause": "vehicle",
+      "outages_count": 6
+    },
+    {
+      "hour": 12,
+      "cause": "animal",
+      "outages_count": 16
+    },
+    {
+      "hour": 12,
+      "cause": "equipment",
+      "outages_count": 10
+    },
+    {
+      "hour": 12,
+      "cause": "lightning",
+      "outages_count": 6
+    },
+    {
+      "hour": 12,
+      "cause": "overload",
+      "outages_count": 3
+    },
+    {
+      "hour": 12,
+      "cause": "tree",
+      "outages_count": 46
+    },
+    {
+      "hour": 12,
+      "cause": "unknown",
+      "outages_count": 13
+    },
+    {
+      "hour": 12,
+      "cause": "vehicle",
+      "outages_count": 1
+    },
+    {
+      "hour": 13,
+      "cause": "animal",
+      "outages_count": 13
+    },
+    {
+      "hour": 13,
+      "cause": "equipment",
+      "outages_count": 11
+    },
+    {
+      "hour": 13,
+      "cause": "lightning",
+      "outages_count": 10
+    },
+    {
+      "hour": 13,
+      "cause": "overload",
+      "outages_count": 12
+    },
+    {
+      "hour": 13,
+      "cause": "tree",
+      "outages_count": 62
+    },
+    {
+      "hour": 13,
+      "cause": "unknown",
+      "outages_count": 7
+    },
+    {
+      "hour": 13,
+      "cause": "vehicle",
+      "outages_count": 2
+    },
+    {
+      "hour": 14,
+      "cause": "animal",
+      "outages_count": 12
+    },
+    {
+      "hour": 14,
+      "cause": "equipment",
+      "outages_count": 16
+    },
+    {
+      "hour": 14,
+      "cause": "lightning",
+      "outages_count": 21
+    },
+    {
+      "hour": 14,
+      "cause": "overload",
+      "outages_count": 13
+    },
+    {
+      "hour": 14,
+      "cause": "tree",
+      "outages_count": 73
+    },
+    {
+      "hour": 14,
+      "cause": "unknown",
+      "outages_count": 12
+    },
+    {
+      "hour": 14,
+      "cause": "vehicle",
+      "outages_count": 4
+    },
+    {
+      "hour": 15,
+      "cause": "animal",
+      "outages_count": 18
+    },
+    {
+      "hour": 15,
+      "cause": "equipment",
+      "outages_count": 13
+    },
+    {
+      "hour": 15,
+      "cause": "lightning",
+      "outages_count": 40
+    },
+    {
+      "hour": 15,
+      "cause": "overload",
+      "outages_count": 12
+    },
+    {
+      "hour": 15,
+      "cause": "tree",
+      "outages_count": 107
+    },
+    {
+      "hour": 15,
+      "cause": "unknown",
+      "outages_count": 9
+    },
+    {
+      "hour": 15,
+      "cause": "vehicle",
+      "outages_count": 3
+    },
+    {
+      "hour": 16,
+      "cause": "animal",
+      "outages_count": 16
+    },
+    {
+      "hour": 16,
+      "cause": "equipment",
+      "outages_count": 12
+    },
+    {
+      "hour": 16,
+      "cause": "lightning",
+      "outages_count": 26
+    },
+    {
+      "hour": 16,
+      "cause": "overload",
+      "outages_count": 9
+    },
+    {
+      "hour": 16,
+      "cause": "tree",
+      "outages_count": 120
+    },
+    {
+      "hour": 16,
+      "cause": "unknown",
+      "outages_count": 10
+    },
+    {
+      "hour": 16,
+      "cause": "vehicle",
+      "outages_count": 2
+    },
+    {
+      "hour": 17,
+      "cause": "animal",
+      "outages_count": 20
+    },
+    {
+      "hour": 17,
+      "cause": "equipment",
+      "outages_count": 11
+    },
+    {
+      "hour": 17,
+      "cause": "lightning",
+      "outages_count": 35
+    },
+    {
+      "hour": 17,
+      "cause": "overload",
+      "outages_count": 9
+    },
+    {
+      "hour": 17,
+      "cause": "tree",
+      "outages_count": 107
+    },
+    {
+      "hour": 17,
+      "cause": "unknown",
+      "outages_count": 9
+    },
+    {
+      "hour": 18,
+      "cause": "animal",
+      "outages_count": 15
+    },
+    {
+      "hour": 18,
+      "cause": "equipment",
+      "outages_count": 10
+    },
+    {
+      "hour": 18,
+      "cause": "lightning",
+      "outages_count": 26
+    },
+    {
+      "hour": 18,
+      "cause": "overload",
+      "outages_count": 8
+    },
+    {
+      "hour": 18,
+      "cause": "tree",
+      "outages_count": 92
+    },
+    {
+      "hour": 18,
+      "cause": "unknown",
+      "outages_count": 8
+    },
+    {
+      "hour": 19,
+      "cause": "animal",
+      "outages_count": 24
+    },
+    {
+      "hour": 19,
+      "cause": "equipment",
+      "outages_count": 12
+    },
+    {
+      "hour": 19,
+      "cause": "lightning",
+      "outages_count": 15
+    },
+    {
+      "hour": 19,
+      "cause": "overload",
+      "outages_count": 8
+    },
+    {
+      "hour": 19,
+      "cause": "tree",
+      "outages_count": 54
+    },
+    {
+      "hour": 19,
+      "cause": "unknown",
+      "outages_count": 14
+    },
+    {
+      "hour": 19,
+      "cause": "vehicle",
+      "outages_count": 6
+    },
+    {
+      "hour": 20,
+      "cause": "animal",
+      "outages_count": 15
+    },
+    {
+      "hour": 20,
+      "cause": "equipment",
+      "outages_count": 6
+    },
+    {
+      "hour": 20,
+      "cause": "lightning",
+      "outages_count": 9
+    },
+    {
+      "hour": 20,
+      "cause": "overload",
+      "outages_count": 8
+    },
+    {
+      "hour": 20,
+      "cause": "tree",
+      "outages_count": 40
+    },
+    {
+      "hour": 20,
+      "cause": "unknown",
+      "outages_count": 11
+    },
+    {
+      "hour": 20,
+      "cause": "vehicle",
+      "outages_count": 5
+    },
+    {
+      "hour": 21,
+      "cause": "animal",
+      "outages_count": 20
+    },
+    {
+      "hour": 21,
+      "cause": "equipment",
+      "outages_count": 11
+    },
+    {
+      "hour": 21,
+      "cause": "lightning",
+      "outages_count": 3
+    },
+    {
+      "hour": 21,
+      "cause": "overload",
+      "outages_count": 3
+    },
+    {
+      "hour": 21,
+      "cause": "tree",
+      "outages_count": 33
+    },
+    {
+      "hour": 21,
+      "cause": "unknown",
+      "outages_count": 7
+    },
+    {
+      "hour": 21,
+      "cause": "vehicle",
+      "outages_count": 9
+    },
+    {
+      "hour": 22,
+      "cause": "animal",
+      "outages_count": 18
+    },
+    {
+      "hour": 22,
+      "cause": "equipment",
+      "outages_count": 26
+    },
+    {
+      "hour": 22,
+      "cause": "lightning",
+      "outages_count": 1
+    },
+    {
+      "hour": 22,
+      "cause": "overload",
+      "outages_count": 1
+    },
+    {
+      "hour": 22,
+      "cause": "tree",
+      "outages_count": 22
+    },
+    {
+      "hour": 22,
+      "cause": "unknown",
+      "outages_count": 8
+    },
+    {
+      "hour": 22,
+      "cause": "vehicle",
+      "outages_count": 8
+    },
+    {
+      "hour": 23,
+      "cause": "animal",
+      "outages_count": 11
+    },
+    {
+      "hour": 23,
+      "cause": "equipment",
+      "outages_count": 11
+    },
+    {
+      "hour": 23,
+      "cause": "lightning",
+      "outages_count": 1
+    },
+    {
+      "hour": 23,
+      "cause": "tree",
+      "outages_count": 21
+    },
+    {
+      "hour": 23,
+      "cause": "unknown",
+      "outages_count": 10
+    },
+    {
+      "hour": 23,
+      "cause": "vehicle",
+      "outages_count": 12
+    }
+  ],
+  "weather_impact": {
+    "correlation_rainfall_outages": 0.37,
+    "correlation_wind_outages": 0.26,
+    "thunderstorm_avg_outages_per_day": 1.73,
+    "normal_day_avg_outages_per_day": 0.74,
+    "thunderstorm_risk_multiplier": 2.35
+  },
+  "restoration_efficiency": {
+    "by_area": [
+      {
+        "area_type": "Rural",
+        "median_duration_min": 116.5,
+        "mean_duration_min": 171.0926966292135,
+        "median_crew_arrival_min": 47.0,
+        "mean_crew_arrival_min": 47.67696629213483,
+        "outages_count": 356
+      },
+      {
+        "area_type": "Suburban",
+        "median_duration_min": 52.5,
+        "mean_duration_min": 85.60526315789474,
+        "median_crew_arrival_min": 29.5,
+        "mean_crew_arrival_min": 28.526315789473685,
+        "outages_count": 38
+      },
+      {
+        "area_type": "Urban",
+        "median_duration_min": 40.0,
+        "mean_duration_min": 71.05882352941177,
+        "median_crew_arrival_min": 22.0,
+        "mean_crew_arrival_min": 20.235294117647058,
+        "outages_count": 17
+      },
+      {
+        "area_type": "rural",
+        "median_duration_min": 121.0,
+        "mean_duration_min": 193.4295168762409,
+        "median_crew_arrival_min": 49.0,
+        "mean_crew_arrival_min": 51.7842488418266,
+        "outages_count": 1511
+      },
+      {
+        "area_type": "suburban",
+        "median_duration_min": 75.0,
+        "mean_duration_min": 107.60655737704919,
+        "median_crew_arrival_min": 28.0,
+        "mean_crew_arrival_min": 27.988290398126463,
+        "outages_count": 427
+      },
+      {
+        "area_type": "urban",
+        "median_duration_min": 45.0,
+        "mean_duration_min": 70.33191489361703,
+        "median_crew_arrival_min": 18.0,
+        "mean_crew_arrival_min": 17.54468085106383,
+        "outages_count": 235
+      }
+    ],
+    "crew_arrival_duration_corr": 0.34
+  },
+  "strategic_proposals": {
+    "proposals": [
+      {
+        "id": 1,
+        "title": "โครงการตัดแต่งกิ่งไม้เชิงรุกก่อนฤดูฝน (Pre-Monsoon Tree Trimming)",
+        "location": "5 สายป้อนชนบทวิกฤต: CRI-F11, CRI-F03, CRI-F04, LPG-F09, CRI-F13",
+        "timeframe": "มีนาคม – เมษายน 2568 (ก่อนเข้าฤดูฝน)",
+        "mechanism": "ตัดแต่งและกำจัดกิ่งไม้ตามแนวสายส่งที่มี Tree Cover ระดับ High ป้องกันการพาดสายจากพายุฤดูร้อน",
+        "estimated_saidi_reduction_min": 175.0,
+        "rationale": "5 สายป้อนนี้ครองสัดส่วน 33% ของ Customer-Minutes ทั้งระบบ และ 68% ของเหตุต้นไม้เกิดในฤดูฝน"
+      },
+      {
+        "id": 2,
+        "title": "โครงการบำรุงรักษาเชิงป้องกันและเปลี่ยนอุปกรณ์หมดอายุ (Aging Asset Replacement)",
+        "location": "สายป้อน CMI-F14 (ติดตั้งปี 1997) และหม้อแปลงชานเมืองเชียงใหม่",
+        "timeframe": "ไตรมาส 1 - 2 ปี 2568",
+        "mechanism": "เปลี่ยนสวิตช์เกียร์ ดรอปเอาท์ฟิวส์ และลูกถ้วยที่เสื่อมสภาพตามสัญญาณเตือนความถี่ขัดข้อง",
+        "estimated_saidi_reduction_min": 65.0,
+        "rationale": "CMI-F14 มีอัตราอุปกรณ์ชำรุดเพิ่มขึ้น 280% (จาก 5 ครั้งในปี 2566 เป็น 19 ครั้งในปี 2567)"
+      },
+      {
+        "id": 3,
+        "title": "โครงการจัดตั้งหน่วยกู้คืนระบบเคลื่อนที่เร็วในเขตชนบท (Rural Rapid Response Staging)",
+        "location": "พื้นที่ชนบทจังหวัดเชียงราย (ครอบคลุมสถานี SS-CRI-01 และ SS-CRI-02)",
+        "timeframe": "พฤษภาคม 2568 (เตรียมพร้อมรับมือพายุช่วง ส.ค.)",
+        "mechanism": "ตั้งจุดกระจายทีมช่างและอุปกรณ์สำรองในพื้นที่ชนบทเพื่อลดเวลาเดินทางจาก 49 นาทีให้เหลือต่ำกว่า 25 นาที",
+        "estimated_saidi_reduction_min": 120.0,
+        "rationale": "เวลาช่างเดินทางมีสหสัมพันธ์ r=0.50 กับเวลาไฟดับ การลดเวลาเดินทางจะตัดทอน Duration ได้โดยตรง"
+      }
+    ],
+    "total_estimated_saidi_reduction_min": 360.0
+  },
+  "actionable_insights": [
+    {
+      "topic": "ต้นไม้คือผู้ร้ายตัวจริง ไม่ใช่สัตว์รบกวน (Root Cause Divergence)",
+      "what": "เหตุจากต้นไม้เกิดขึ้น 43.2% ของจำนวนครั้ง แต่กินเวลาความเสียหายถึง 55.8% ของ Customer-Minutes ทั้งระบบ ขณะที่สัตว์รบกวนเกิดขึ้นถึง 21.0% แต่สร้างความเสียหายเพียง 5.5%",
+      "so_what": "การทุ่มงบประมาณไปกับการป้องกันสัตว์ (เช่น ติดลูกถ้วยกันงู) จะช่วยลดจำนวนครั้งได้เล็กน้อยแต่แทบไม่ช่วยลดค่า SAIDI ในภาพรวม การแก้ปัญหาต้นไม้จึงคุ้มค่าการลงทุนมากกว่าหลายเท่าตัว",
+      "now_what": "จัดสรรงบประมาณ 60% ของปี 2568 สำหรับการตัดแต่งต้นไม้เชิงรุกใน 5 สายป้อนหลักก่อนเดือนพฤษภาคม"
+    },
+    {
+      "topic": "พายุใหญ่เชียงราย 2 วัน สร้างความเสียหาย 1 ใน 5 ของทั้งปี (Disaster Resiliency)",
+      "what": "พายุฝนและลมแรง วันที่ 22–23 ส.ค. 2567 ที่เชียงราย เกิดไฟดับ 79 ครั้ง สร้างความเสียหาย 55.7 ล้านนาที-ราย คิดเป็น 22.3% ของความเสียหายทั้งปี 2567",
+      "so_what": "ความน่าเชื่อถือของระบบปี 2567 ที่ดูแย่ลงอย่างมาก (+41% SAIDI) แท้จริงแล้วเกิดจากภัยธรรมชาติรุนแรง หากไม่รวมพายุ SAIDI จะเพิ่มขึ้นเพียง 9.7%",
+      "now_what": "แยกรายงานดัชนีเป็นแบบรวมพายุและไม่รวมพายุเพื่อสะท้อนประสิทธิภาพจริงของวิศวกร และจัดทำแผนเผชิญเหตุฉุกเฉินระดับวิกฤต (Emergency Disaster Protocol) ประจำเดือนสิงหาคม"
+    },
+    {
+      "topic": "วิกฤตความช้าในชนบทเกิดจาก 'การเดินทาง' ไม่ใช่ 'การซ่อม' (Restoration Bottleneck)",
+      "what": "ทีมช่างใช้เวลาเดินทางในเขตชนบท (มัธยฐาน 49 นาที) นานกว่าในเมือง (18 นาที) ถึง 2.7 เท่า ส่งผลให้ระยะเวลาดับรวมในชนบทสูงถึง 121 นาที",
+      "so_what": "เวลาที่ผู้ใช้ไฟฟ้าไม่มีไฟใช้ในชนบท เกือบครึ่งหนึ่งหมดไปกับการรอให้ช่างขับรถมาถึงหน้างาน การอบรมช่างให้ซ่อมเร็วขึ้นจึงไม่ตอบโจทย์เท่าการย่นระยะทางเดินทาง",
+      "now_what": "จัดตั้งจุด Staging Units กระจายทีมช่างในพื้นที่อำเภอห่างไกลในเชียงรายและลำปางช่วงฤดูมรสุม"
+    },
+    {
+      "topic": "สัญญาณเตือนก่อนพังของสายป้อน CMI-F14 (Early Failure Warning)",
+      "what": "สายป้อน CMI-F14 ซึ่งติดตั้งมาตั้งแต่ปี 1997 มีเหตุการณ์อุปกรณ์ชำรุดเพิ่มขึ้นจาก 5 ครั้งในปี 2566 เป็น 19 ครั้งในปี 2567 (+280%)",
+      "so_what": "สายป้อนนี้เริ่มเข้าสู่ช่วงท้ายของ Bathtub Curve (Wear-out failure phase) หากไม่เร่งแก้ไขจะเกิดการชำรุดลุกลามจนกลายเป็นการดับขนาดใหญ่",
+      "now_what": "บรรจุ CMI-F14 เข้าสู่แผนงานเร่งด่วนเพื่อ Re-conductoring และเปลี่ยนหม้อแปลงไฟฟ้าใหม่ในไตรมาสที่ 1 ปี 2568"
+    }
+  ],
+  "distributions": {
+    "duration_min": {
+      "mean": 162.6,
+      "median": 103.0,
+      "std": 221.7,
+      "min": 0,
+      "max": 4159,
+      "q25": 52.2,
+      "q75": 192.0,
+      "iqr": 139.8,
+      "p95": 484.7,
+      "skewness": 6.95,
+      "note": "การกระจายตัวของระยะเวลาดับเบ้ขวาอย่างรุนแรง (Right-skewed, Skewness > 2) ค่ามัธยฐาน (104.0 นาที) จึงเป็นตัวแทนสถิติที่น่าเชื่อถือกว่าค่าเฉลี่ย (163.0 นาที)"
+    },
+    "customers_affected": {
+      "mean": 1165.5,
+      "median": 907.0,
+      "std": 967.9,
+      "min": 2,
+      "max": 7593,
+      "q25": 490.0,
+      "q75": 1571.2,
+      "p95": 3045.4
+    },
+    "crew_arrival_min": {
+      "mean": 43.6,
+      "median": 41.5,
+      "std": 23.1,
+      "min": 5.0,
+      "max": 228.0,
+      "correlation_with_duration": 0.34
+    }
+  }
+}

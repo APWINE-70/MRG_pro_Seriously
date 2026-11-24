@@ -225,6 +225,13 @@ def run_analytics():
 
     total_projected_reduction = sum(p["estimated_saidi_reduction_min"] for p in proposals)
 
+    # Load actionable insights from eda_statistical_results if available
+    eda_json_path = os.path.join(r"C:\Users\Surface\Documents\MrG\docs", "eda_statistical_results.json")
+    actionable_insights = []
+    if os.path.exists(eda_json_path):
+        with open(eda_json_path, "r", encoding="utf-8") as f:
+            actionable_insights = json.load(f).get("actionable_insights", [])
+
     # Bundle all analytics
     analytics_bundle = {
         "metadata": {
@@ -253,7 +260,8 @@ def run_analytics():
         "strategic_proposals": {
             "proposals": proposals,
             "total_estimated_saidi_reduction_min": round(total_projected_reduction, 1)
-        }
+        },
+        "actionable_insights": actionable_insights
     }
 
     # Save to public and local paths
@@ -261,7 +269,11 @@ def run_analytics():
     out_file1 = os.path.join(out_dir1, "web_analytics.json")
     with open(out_file1, "w", encoding="utf-8") as f:
         json.dump(analytics_bundle, f, ensure_ascii=False, indent=2)
-    print(f"Web analytics bundle generated at {out_file1}")
+    for copy_dest in [r"C:\Users\Surface\Documents\MrG\app\web_analytics.json", r"C:\Users\Surface\Documents\MrG\public\data\web_analytics.json"]:
+        os.makedirs(os.path.dirname(copy_dest), exist_ok=True)
+        with open(copy_dest, "w", encoding="utf-8") as f:
+            json.dump(analytics_bundle, f, ensure_ascii=False, indent=2)
+    print(f"Web analytics bundle generated at {out_file1} and copied to app and public")
     return analytics_bundle
 
 if __name__ == "__main__":
