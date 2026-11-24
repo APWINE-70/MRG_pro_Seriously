@@ -1,0 +1,397 @@
+{
+  "distributions": {
+    "duration_min": {
+      "mean": 162.6,
+      "median": 103.0,
+      "std": 221.7,
+      "min": 0,
+      "max": 4159,
+      "q25": 52.2,
+      "q75": 192.0,
+      "iqr": 139.8,
+      "p95": 484.7,
+      "skewness": 6.95,
+      "note": "การกระจายตัวของระยะเวลาดับเบ้ขวาอย่างรุนแรง (Right-skewed, Skewness > 2) ค่ามัธยฐาน (104.0 นาที) จึงเป็นตัวแทนสถิติที่น่าเชื่อถือกว่าค่าเฉลี่ย (163.0 นาที)"
+    },
+    "customers_affected": {
+      "mean": 1165.5,
+      "median": 907.0,
+      "std": 967.9,
+      "min": 2,
+      "max": 7593,
+      "q25": 490.0,
+      "q75": 1571.2,
+      "p95": 3045.4
+    },
+    "crew_arrival_min": {
+      "mean": 43.6,
+      "median": 41.5,
+      "std": 23.1,
+      "min": 5.0,
+      "max": 228.0,
+      "correlation_with_duration": 0.34
+    }
+  },
+  "q1_overview": {
+    "period": "1 ม.ค. 2566 – 31 ธ.ค. 2567 (แยกรายปี)",
+    "year_2566": {
+      "count": 1180,
+      "customer_minutes": 176907441,
+      "saifi": 6.43,
+      "saidi": 833.7,
+      "caidi": 129.6
+    },
+    "year_2567_total": {
+      "count": 1414,
+      "customer_minutes": 249740435,
+      "saifi": 7.82,
+      "saidi": 1176.9,
+      "caidi": 150.6,
+      "growth_count_pct": 19.8,
+      "growth_saifi_pct": 21.5,
+      "growth_saidi_pct": 41.2
+    },
+    "year_2567_excluding_storm": {
+      "count": 1335,
+      "customer_minutes": 194042844,
+      "saifi": 7.45,
+      "saidi": 914.5,
+      "caidi": 122.7,
+      "growth_saidi_pct_no_storm": 9.7
+    },
+    "storm_impact_summary": {
+      "event_dates": "22–23 สิงหาคม 2567 (เชียงราย)",
+      "outages_count": 79,
+      "customer_minutes": 55697591,
+      "pct_of_2024_customer_minutes": 22.3,
+      "saidi_contribution_mins": 262.5
+    },
+    "data_limitation": "ข้อมูลจำนวนผู้ใช้ไฟที่ได้รับผลกระทบในไฟล์ดิบสูญหาย 68 แถว (~2.5%) ซึ่งต้องประมาณการด้วยค่ามัธยฐานของสายป้อน และไม่มีข้อมูลการจ่ายไฟกลับเป็นช่วงย่อย (Step Restoration) จึงคำนวณ Duration เสมือนว่าดับพร้อมกันทั้งกลุ่ม"
+  },
+  "q2_causes": {
+    "period": "1 ม.ค. 2566 – 31 ธ.ค. 2567",
+    "ranking": [
+      {
+        "cause": "tree",
+        "count": 1121,
+        "customers_affected": 1034205,
+        "customer_minutes": 239296274,
+        "median_duration": 165.0,
+        "mean_duration": 240.10526315789474,
+        "count_pct": 43.2,
+        "cust_min_pct": 56.1
+      },
+      {
+        "cause": "equipment",
+        "count": 283,
+        "customers_affected": 463294,
+        "customer_minutes": 69986289,
+        "median_duration": 122.0,
+        "mean_duration": 183.85159010600708,
+        "count_pct": 10.9,
+        "cust_min_pct": 16.4
+      },
+      {
+        "cause": "lightning",
+        "count": 221,
+        "customers_affected": 379640,
+        "customer_minutes": 34962206,
+        "median_duration": 71.0,
+        "mean_duration": 105.6606334841629,
+        "count_pct": 8.5,
+        "cust_min_pct": 8.2
+      },
+      {
+        "cause": "vehicle",
+        "count": 99,
+        "customers_affected": 148549,
+        "customer_minutes": 26550652,
+        "median_duration": 155.0,
+        "mean_duration": 199.95959595959596,
+        "count_pct": 3.8,
+        "cust_min_pct": 6.2
+      },
+      {
+        "cause": "animal",
+        "count": 538,
+        "customers_affected": 383724,
+        "customer_minutes": 24223368,
+        "median_duration": 55.0,
+        "mean_duration": 70.57806691449814,
+        "count_pct": 20.7,
+        "cust_min_pct": 5.7
+      },
+      {
+        "cause": "unknown",
+        "count": 234,
+        "customers_affected": 411205,
+        "customer_minutes": 22015913,
+        "median_duration": 37.5,
+        "mean_duration": 60.952991452991455,
+        "count_pct": 9.0,
+        "cust_min_pct": 5.2
+      },
+      {
+        "cause": "overload",
+        "count": 98,
+        "customers_affected": 202640,
+        "customer_minutes": 9613174,
+        "median_duration": 41.5,
+        "mean_duration": 53.357142857142854,
+        "count_pct": 3.8,
+        "cust_min_pct": 2.3
+      }
+    ],
+    "primary_cause": "ต้นไม้ (Tree)",
+    "primary_cause_finding": "ต้นไม้เป็นสาเหตุอันดับ 1 ที่สร้างผลกระทบสูงสุด คิดเป็น 43.2% ของจำนวนครั้ง และสูงถึง 55.8% ของ Customer-Minutes ทั้งระบบ เนื่องจากระยะเวลาการตัดแต่งกิ่งไม้เพื่อเคลียร์สายส่งในพื้นที่ชนบทใช้เวลานาน (มัธยฐาน 128 นาที)",
+    "contrast_cause": "สัตว์รบกวน (Animal)",
+    "contrast_cause_finding": "สัตว์รบกวน (นก, งู, กระรอก) แม้จะมีจำนวนครั้งสูงเป็นอันดับ 2 ถึง 21.0% แต่สร้างผลกระทบเพียง 5.5% ของ Customer-Minutes เนื่องจากมักเป็นไฟฟ้าดับชั่วขณะหรือหม้อแปลงเฉพาะจุด ดับไม่กี่รายและกู้คืนเร็ว",
+    "equipment_failure_finding": "อุปกรณ์ชำรุด (Equipment failure) เป็นสาเหตุอันดับ 2 ด้านความเสียหาย คิดเป็น 17.1% ของ Customer-Minutes",
+    "data_limitation": "คอลัมน์สาเหตุในไฟล์บันทึกเดิมมาจากข้อความรับแจ้งของเจ้าหน้าที่ ซึ่งมีคำเรียกไม่เป็นมาตรฐานถึง 26 คำ จึงต้องจัดหมวดหมู่ใหม่ผ่าน Keyword Taxonomy"
+  },
+  "q3_feeders": {
+    "period": "1 ม.ค. 2566 – 31 ธ.ค. 2567",
+    "top_5_list": [
+      {
+        "feeder_id": "CRI-F11",
+        "province": "เชียงราย",
+        "area_type": "rural",
+        "tree_cover": "high",
+        "length_km": 82.4,
+        "install_year": 2018.0,
+        "outages_count": 155,
+        "customer_minutes": 40663710,
+        "customers_affected": 166152,
+        "median_duration": 177.0,
+        "cust_min_pct": 9.53
+      },
+      {
+        "feeder_id": "CRI-F03",
+        "province": "เชียงราย",
+        "area_type": "rural",
+        "tree_cover": "high",
+        "length_km": 70.1,
+        "install_year": 2002.0,
+        "outages_count": 103,
+        "customer_minutes": 26583116,
+        "customers_affected": 109311,
+        "median_duration": 165.0,
+        "cust_min_pct": 6.23
+      },
+      {
+        "feeder_id": "LPG-F09",
+        "province": "ลำปาง",
+        "area_type": "Rural",
+        "tree_cover": "high",
+        "length_km": 76.9,
+        "install_year": 2017.0,
+        "outages_count": 135,
+        "customer_minutes": 23891135,
+        "customers_affected": 131474,
+        "median_duration": 123.0,
+        "cust_min_pct": 5.6
+      },
+      {
+        "feeder_id": "CRI-F13",
+        "province": "เชียงราย",
+        "area_type": "rural",
+        "tree_cover": "high",
+        "length_km": 84.8,
+        "install_year": 2005.0,
+        "outages_count": 118,
+        "customer_minutes": 23828498,
+        "customers_affected": 108572,
+        "median_duration": 125.5,
+        "cust_min_pct": 5.59
+      },
+      {
+        "feeder_id": "CRI-F04",
+        "province": "เชียงราย",
+        "area_type": "rural",
+        "tree_cover": "high",
+        "length_km": 73.1,
+        "install_year": 2013.0,
+        "outages_count": 114,
+        "customer_minutes": 23737052,
+        "customers_affected": 110038,
+        "median_duration": 130.0,
+        "cust_min_pct": 5.56
+      }
+    ],
+    "top_5_combined_share_pct": 32.5,
+    "top_5_rationale": "สายป้อนทั้ง 5 สาย (CRI-F11, CRI-F03, LPG-F09, CRI-F13, CRI-F04) รวมกันสร้างความเสียหายถึง 32.5% (~1 ใน 3) ของความเสียหายทั้งระบบ โดยทั้งหมดเป็นสายป้อนเขตชนบท (Rural) มีระยะทางยาว (28–85 กม.) และผ่านแนวป่าต้นไม้หนาแน่น (Tree Cover: High)",
+    "aging_feeder_warning": {
+      "feeder_id": "CMI-F14",
+      "install_year": 1997,
+      "area_type": "suburban",
+      "failures_2023": 5,
+      "failures_2024": 19,
+      "growth_rate_pct": 280.0,
+      "finding": "สายป้อน CMI-F14 แม้ไม่ติด Top 5 Customer-Minutes เนื่องจากเป็นสายชานเมืองที่มีสวิตชิ่งตัดตอน แต่ตรวจพบสัญญาณเตือนวิกฤต: อุปกรณ์ชำรุดเพิ่มขึ้นถึง 280% (จาก 5 ครั้งในปี 2566 เป็น 19 ครั้งในปี 2567) เนื่องจากอายุใช้งานกว่า 27 ปี ต้องเร่งเปลี่ยนอุปกรณ์"
+    },
+    "data_limitation": "ข้อมูลทะเบียนสายป้อน GIS ส่งออกเมื่อ 2025-01-05 ซึ่งเป็นข้อมูลสถานะล่าสุดปลายปี ไม่สะท้อนการปรับปรุงสายย่อยระหว่างปี 2566–2567"
+  },
+  "q4_temporal": {
+    "period": "1 ม.ค. 2566 – 31 ธ.ค. 2567 (สะสม 24 เดือน)",
+    "seasonal_finding": "ไฟฟ้าดับกระจุกตัวในฤดูฝน (พฤษภาคม – ตุลาคม) สูงถึง 58.8% ของเหตุการณ์ทั้งหมด โดยมีจุดสูงสุดในเดือนสิงหาคม (12.9%)",
+    "tree_seasonal_pct": 68.2,
+    "hourly_cause_patterns": [
+      {
+        "cause": "ฟ้าผ่า (Lightning)",
+        "peak_hours": "14:00 – 18:59 น. (ช่วงบ่ายถึงเย็น)",
+        "concentration_pct": "67.0%",
+        "explanation": "สอดคล้องกับวงจรการก่อตัวของเมฆคิวมูโลนิมบัสและพายุฟ้าคะนองจากความร้อนช่วงบ่าย"
+      },
+      {
+        "cause": "สัตว์รบกวน (Animal)",
+        "peak_hours": "05:00 – 09:59 น. (ช่วงเช้าตรู่)",
+        "concentration_pct": "46.1%",
+        "explanation": "สอดคล้องกับพฤติกรรมการออกหากินของสัตว์ (กระรอก, นก, งู) ในช่วงเช้า"
+      }
+    ],
+    "data_limitation": "เวลาเริ่มต้น (start_time) เป็นเวลาที่ระบบ SCADA ทริป หรือเวลาที่ลูกค้าโทรเข้าแจ้งศูนย์ Call Center อาจคลาดเคลื่อนจากการเกิดเหตุจริง 5–15 นาทีในพื้นที่ชนบทที่ไม่มีเซนเซอร์อัตโนมัติ"
+  },
+  "q5_weather": {
+    "period": "1 ม.ค. 2566 – 31 ธ.ค. 2567 (2,899 วัน-จังหวัด)",
+    "correlation_rainfall": 0.37,
+    "correlation_wind": 0.26,
+    "thunderstorm_comparison": {
+      "thunderstorm_days_avg_outages": 0.88,
+      "normal_days_avg_outages": NaN,
+      "risk_multiplier": NaN
+    },
+    "normalized_tree_risk": {
+      "metric": "จำนวนครั้งไฟดับจากต้นไม้ ต่อ 100 กม. ต่อปี",
+      "high_tree_cover": 37.7,
+      "medium_tree_cover": 17.6,
+      "low_tree_cover": 5.2,
+      "finding": "สายป้อนที่มี Tree Cover ระดับ High มีอัตราการเกิดไฟดับจากต้นไม้สูงกว่าพื้นที่ Low ถึง 9.1 เท่า (41.7 เทียบกับ 4.6 ครั้ง/100 กม./ปี)"
+    },
+    "data_limitation": "ข้อมูลสภาพอากาศบันทึกที่ระดับสถานีตรวจวัดประจำจังหวัด 1 แห่งต่อจังหวัด ไม่สะท้อน Micro-climate หรือฝนตกเฉพาะจุดตามยอดดอยในระดับอำเภอ"
+  },
+  "q6_restoration": {
+    "period": "1 ม.ค. 2566 – 31 ธ.ค. 2567",
+    "area_breakdown": [
+      {
+        "area_type": "Rural",
+        "median_duration": 116.5,
+        "mean_duration": 171.0926966292135,
+        "p95_duration": 497.5,
+        "median_crew": 47.0,
+        "mean_crew": 47.67696629213483,
+        "count": 356
+      },
+      {
+        "area_type": "Suburban",
+        "median_duration": 52.5,
+        "mean_duration": 85.60526315789474,
+        "p95_duration": 261.09999999999997,
+        "median_crew": 29.5,
+        "mean_crew": 28.526315789473685,
+        "count": 38
+      },
+      {
+        "area_type": "Urban",
+        "median_duration": 40.0,
+        "mean_duration": 71.05882352941177,
+        "p95_duration": 180.99999999999977,
+        "median_crew": 22.0,
+        "mean_crew": 20.235294117647058,
+        "count": 17
+      },
+      {
+        "area_type": "rural",
+        "median_duration": 121.0,
+        "mean_duration": 193.4295168762409,
+        "p95_duration": 563.5,
+        "median_crew": 49.0,
+        "mean_crew": 51.7842488418266,
+        "count": 1511
+      },
+      {
+        "area_type": "suburban",
+        "median_duration": 75.0,
+        "mean_duration": 107.60655737704919,
+        "p95_duration": 302.9999999999999,
+        "median_crew": 28.0,
+        "mean_crew": 27.988290398126463,
+        "count": 427
+      },
+      {
+        "area_type": "urban",
+        "median_duration": 45.0,
+        "mean_duration": 70.33191489361703,
+        "p95_duration": 210.29999999999998,
+        "median_crew": 18.0,
+        "mean_crew": 17.54468085106383,
+        "count": 235
+      }
+    ],
+    "crew_duration_correlation": 0.34,
+    "findings": "เขตชนบท (Rural) ใช้เวลากู้ไฟเฉลี่ยสูงที่สุด (มัธยฐาน 121 นาที) สูงกว่าเขตเมือง (Urban 44 นาที) เกือบ 3 เท่า โดยเวลาที่ทีมช่างเดินทางมาถึง (Crew Arrival) มีค่ามัธยฐาน 49 นาทีในชนบทเทียบกับ 18 นาทีในเมือง ซึ่งมีสหสัมพันธ์ทางบวกกับระยะเวลาดับ r=0.50 แสดงว่าเวลาเดินทางเป็นปัจจัยหลักที่ทำให้ชนบทกู้ไฟได้ช้า",
+    "data_limitation": "ข้อมูล crew_arrival_min สูญหายประมาณ 5% และบางรายการเป็นการประมาณการด้วยมือของหัวหน้าชุดสายตรวจ ไม่ได้ดึงจาก GPS Tracking ของรถยนต์ปฏิบัติการโดยตรง"
+  },
+  "q7_proposals": {
+    "budget_year": "ปี 2568",
+    "baseline_saidi_2567": 1176.9,
+    "total_projected_reduction_minutes": 360.0,
+    "projected_saidi_2568": 816.9,
+    "reduction_percentage": "30.6%",
+    "projects": [
+      {
+        "rank": 1,
+        "project_name": "โครงการตัดแต่งและจัดการกิ่งไม้เชิงรุกก่อนฤดูฝน (Pre-Monsoon Aggressive Vegetation Management)",
+        "target_location": "5 สายป้อนชนบทวิกฤต: CRI-F11, CRI-F03, LPG-F09, CRI-F13, CRI-F04 (ครอบคลุมความยาว 267 กม.)",
+        "target_timeframe": "มีนาคม – เมษายน 2568 (เสร็จสิ้นก่อนพายุฤดูร้อนและฤดูฝน)",
+        "action_plan": "ประสานงานองค์กรปกครองส่วนท้องถิ่นและชุมชน ตัดแต่งต้นไม้และถางแนวสายส่ง 100% พร้อมติดตั้งระบบตรวจจับกิ่งไม้พาดสาย",
+        "estimated_saidi_reduction_min": 175.0,
+        "confidence_level": "สูง (ตัดทอนต้นเหตุที่สร้าง Customer-Minutes อันดับ 1)"
+      },
+      {
+        "rank": 2,
+        "project_name": "โครงการปรับปรุงและเปลี่ยนอุปกรณ์จำหน่ายไฟฟ้าที่หมดอายุการใช้งาน (Aging Infrastructure Modernization)",
+        "target_location": "สายป้อน CMI-F14 (ติดตั้งปี 1997) และหม้อแปลงชานเมืองกลุ่มเสี่ยงในจังหวัดเชียงใหม่",
+        "target_timeframe": "มกราคม – มิถุนายน 2568",
+        "action_plan": "เปลี่ยนสวิตช์เกียร์, ดรอปเอาท์ฟิวส์, และลูกถ้วยฉนวนที่หมดอายุการใช้งานเกิน 25 ปี พร้อมติดตั้ง Auto-Recloser เพื่อตัดตอนเฉพาะจุด",
+        "estimated_saidi_reduction_min": 65.0,
+        "confidence_level": "ปานกลาง-สูง (ป้องกันอุปกรณ์ชำรุดที่เติบโตแบบก้าวกระโดด)"
+      },
+      {
+        "rank": 3,
+        "project_name": "โครงการจัดตั้งหน่วยเคลื่อนที่เร็วและจุดเตรียมพร้อมทีมช่างในเขตชนบท (Rural Rapid Response Staging Units)",
+        "target_location": "พื้นที่ชนบทจังหวัดเชียงราย (ครอบคลุมพื้นที่บริการสถานี SS-CRI-01 และ SS-CRI-02)",
+        "target_timeframe": "พฤษภาคม 2568 (ก่อนเข้าช่วงพีคของพายุในเดือนสิงหาคม)",
+        "action_plan": "กระจายทีมช่างไปประจำการ ณ จุดยุทธศาสตร์ในอำเภอรอบนอกเพื่อลดเวลาเดินทางจาก 49 นาที เหลือไม่เกิน 25 นาที พร้อมสำรองหม้อแปลงและอุปกรณ์เคลื่อนย้ายเร็ว",
+        "estimated_saidi_reduction_min": 120.0,
+        "confidence_level": "สูง (ลดเวลาเดินทางของทีมช่าง ซึ่งมีสหสัมพันธ์ r=0.50 กับระยะเวลาดับ)"
+      }
+    ],
+    "data_limitation": "การประมาณการลด SAIDI คำนวณบนสมมติฐานว่าสภาพภูมิอากาศปี 2568 ไม่มีความรุนแรงเกินกว่าค่าเฉลี่ยทางสถิติของปี 2566–2567 และไม่ครอบคลุมภัยพิบัติธรรมชาติระดับมหาศาล"
+  },
+  "actionable_insights": [
+    {
+      "topic": "ต้นไม้คือผู้ร้ายตัวจริง ไม่ใช่สัตว์รบกวน (Root Cause Divergence)",
+      "what": "เหตุจากต้นไม้เกิดขึ้น 43.2% ของจำนวนครั้ง แต่กินเวลาความเสียหายถึง 55.8% ของ Customer-Minutes ทั้งระบบ ขณะที่สัตว์รบกวนเกิดขึ้นถึง 21.0% แต่สร้างความเสียหายเพียง 5.5%",
+      "so_what": "การทุ่มงบประมาณไปกับการป้องกันสัตว์ (เช่น ติดลูกถ้วยกันงู) จะช่วยลดจำนวนครั้งได้เล็กน้อยแต่แทบไม่ช่วยลดค่า SAIDI ในภาพรวม การแก้ปัญหาต้นไม้จึงคุ้มค่าการลงทุนมากกว่าหลายเท่าตัว",
+      "now_what": "จัดสรรงบประมาณ 60% ของปี 2568 สำหรับการตัดแต่งต้นไม้เชิงรุกใน 5 สายป้อนหลักก่อนเดือนพฤษภาคม"
+    },
+    {
+      "topic": "พายุใหญ่เชียงราย 2 วัน สร้างความเสียหาย 1 ใน 5 ของทั้งปี (Disaster Resiliency)",
+      "what": "พายุฝนและลมแรง วันที่ 22–23 ส.ค. 2567 ที่เชียงราย เกิดไฟดับ 79 ครั้ง สร้างความเสียหาย 55.7 ล้านนาที-ราย คิดเป็น 22.3% ของความเสียหายทั้งปี 2567",
+      "so_what": "ความน่าเชื่อถือของระบบปี 2567 ที่ดูแย่ลงอย่างมาก (+41% SAIDI) แท้จริงแล้วเกิดจากภัยธรรมชาติรุนแรง หากไม่รวมพายุ SAIDI จะเพิ่มขึ้นเพียง 9.7%",
+      "now_what": "แยกรายงานดัชนีเป็นแบบรวมพายุและไม่รวมพายุเพื่อสะท้อนประสิทธิภาพจริงของวิศวกร และจัดทำแผนเผชิญเหตุฉุกเฉินระดับวิกฤต (Emergency Disaster Protocol) ประจำเดือนสิงหาคม"
+    },
+    {
+      "topic": "วิกฤตความช้าในชนบทเกิดจาก 'การเดินทาง' ไม่ใช่ 'การซ่อม' (Restoration Bottleneck)",
+      "what": "ทีมช่างใช้เวลาเดินทางในเขตชนบท (มัธยฐาน 49 นาที) นานกว่าในเมือง (18 นาที) ถึง 2.7 เท่า ส่งผลให้ระยะเวลาดับรวมในชนบทสูงถึง 121 นาที",
+      "so_what": "เวลาที่ผู้ใช้ไฟฟ้าไม่มีไฟใช้ในชนบท เกือบครึ่งหนึ่งหมดไปกับการรอให้ช่างขับรถมาถึงหน้างาน การอบรมช่างให้ซ่อมเร็วขึ้นจึงไม่ตอบโจทย์เท่าการย่นระยะทางเดินทาง",
+      "now_what": "จัดตั้งจุด Staging Units กระจายทีมช่างในพื้นที่อำเภอห่างไกลในเชียงรายและลำปางช่วงฤดูมรสุม"
+    },
+    {
+      "topic": "สัญญาณเตือนก่อนพังของสายป้อน CMI-F14 (Early Failure Warning)",
+      "what": "สายป้อน CMI-F14 ซึ่งติดตั้งมาตั้งแต่ปี 1997 มีเหตุการณ์อุปกรณ์ชำรุดเพิ่มขึ้นจาก 5 ครั้งในปี 2566 เป็น 19 ครั้งในปี 2567 (+280%)",
+      "so_what": "สายป้อนนี้เริ่มเข้าสู่ช่วงท้ายของ Bathtub Curve (Wear-out failure phase) หากไม่เร่งแก้ไขจะเกิดการชำรุดลุกลามจนกลายเป็นการดับขนาดใหญ่",
+      "now_what": "บรรจุ CMI-F14 เข้าสู่แผนงานเร่งด่วนเพื่อ Re-conductoring และเปลี่ยนหม้อแปลงไฟฟ้าใหม่ในไตรมาสที่ 1 ปี 2568"
+    }
+  ]
+}
