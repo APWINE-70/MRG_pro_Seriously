@@ -1,0 +1,11 @@
+﻿feeder_id,substation_id,area_type,length_km,customers_total,tree_cover,overhead_pct,install_year
+CMI-F01,SS-CMI-01,urban,10.8,7470,low,62,2008
+CMI-F02,SS-CMI-01,urban,7.1,5321,medium,78,2011
+CMI-F03,SS-CMI-01,urban,5.1,7152,low,80,2013
+CMI-F04,SS-CMI-01,suburban,23.8,4157,low,87,1997
+CMI-F05,SS-CMI-01,urban,7.3,7258,low,58,2008
+CMI-F06,SS-CMI-01,urban,5.1,6664,medium,85,2005
+CMI-F07,SS-CMI-01,urban,9.7,8762,medium,65,2011
+CMI-F08,SS-CMI-01,suburban,17.8,3694,medium,90,2008
+CMI-F09,SS-CMI-02,suburban,23.8,3304,medium,89,2019
+CMI-F10,SS-CMI-02,rural,68.2,2888,high,100,2003

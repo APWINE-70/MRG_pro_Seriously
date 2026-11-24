@@ -1,3 +1,7 @@
+# Competition Fixtures & Private Test Packs
+tests/fixtures/
+*.zip
+
 # Environments & Secrets
 .env
 .env.*
