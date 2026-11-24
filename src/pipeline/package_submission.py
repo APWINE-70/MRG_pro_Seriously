@@ -12,9 +12,9 @@ def package_submission():
     output_zip = os.path.join(base_dir, "lanna_power_outage_submission.zip")
     
     # Target directories to include
-    include_dirs = ["data", "docs", "notebooks", "src"]
+    include_dirs = ["app", "public", "data", "docs", "notebooks", "src"]
     include_files = [
-        "package.json", "next.config.js", "tailwind.config.js",
+        "package.json", "package-lock.json", "next.config.js", "tailwind.config.js",
         "postcss.config.js", "Dockerfile", "run_local.bat", "README.md", "AGENTS.md"
     ]
 
